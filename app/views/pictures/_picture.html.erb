@@ -1,3 +1,10 @@
 <div>
   <%= image_tag picture.image, title: picture.title %>
+  <%= link_to 'Copy!', new_picture_copy_path(picture) %>
+</div>
+<div>
+  <h2>Copies</h2>
+  <% picture.copies.each do |copy| %>
+    <%= image_tag copy.image, title: copy.name %>
+  <% end %>
 </div>
