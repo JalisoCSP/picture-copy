@@ -1,26 +1,24 @@
-<div class="mt-12 flex flex-wrap">
-  <div class="w-full md:w-1/2">
-    <%= image_tag picture.image, title: picture.title %>
-  </div>
-  <div class="w-full md:w-1/2">
-    <div class="grid grid-cols-2 lg:grid-cols-4">
-      <%= link_to new_picture_copy_path(picture) do %>
-        <div class="flex items-center justify-center">
-          <div class="font-bold text-6xl">
-            +
-          </div>
+<div class="w-full md:w-1/2">
+  <%= image_tag picture.image, title: picture.title %>
+</div>
+<div class="w-full md:w-1/2">
+  <div class="grid grid-cols-2 lg:grid-cols-4">
+    <%= link_to new_picture_copy_path(picture) do %>
+      <div class="flex items-center justify-center">
+        <div class="font-bold text-6xl">
+          +
         </div>
-      <% end %>
-      <% picture.copies.each do |copy| %>
-        <%= image_tag copy.image, title: copy.name %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
+    <% picture.copies.each do |copy| %>
+      <%= image_tag copy.image, title: copy.name %>
+    <% end %>
   </div>
-  <div class="w-full px-6 pt-6">
-    <strong>
-      <%= picture.title %>
-    </strong>
-    &#8226;
-    <%= picture.description %>
-  </div>
+</div>
+<div class="w-full p-6 pb-12">
+  <strong>
+    <%= picture.title %>
+  </strong>
+  &#8226;
+  <%= picture.description %>
 </div>
