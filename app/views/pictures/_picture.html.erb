@@ -1,4 +1,4 @@
-<div class="flex flex-wrap">
+<div class="mt-12 flex flex-wrap">
   <div class="w-full md:w-1/2">
     <%= image_tag picture.image, title: picture.title %>
   </div>
@@ -15,5 +15,12 @@
         <%= image_tag copy.image, title: copy.name %>
       <% end %>
     </div>
+  </div>
+  <div class="w-full px-6 pt-6">
+    <strong>
+      <%= picture.title %>
+    </strong>
+    &#8226;
+    <%= picture.description %>
   </div>
 </div>
