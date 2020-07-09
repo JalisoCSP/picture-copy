@@ -1,10 +1,19 @@
-<div>
-  <%= image_tag picture.image, title: picture.title %>
-  <%= link_to 'Copy!', new_picture_copy_path(picture) %>
-</div>
-<div>
-  <h2>Copies</h2>
-  <% picture.copies.each do |copy| %>
-    <%= image_tag copy.image, title: copy.name %>
-  <% end %>
+<div class="flex flex-wrap">
+  <div class="w-full md:w-1/2">
+    <%= image_tag picture.image, title: picture.title %>
+  </div>
+  <div class="w-full md:w-1/2">
+    <div class="grid grid-cols-2 lg:grid-cols-4">
+      <%= link_to new_picture_copy_path(picture) do %>
+        <div class="flex items-center justify-center">
+          <div class="font-bold text-6xl">
+            +
+          </div>
+        </div>
+      <% end %>
+      <% picture.copies.each do |copy| %>
+        <%= image_tag copy.image, title: copy.name %>
+      <% end %>
+    </div>
+  </div>
 </div>
